@@ -1,13 +1,115 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* antd override */
+
+input {
+  border-radius: 2px;
+  border: 1px solid rgba(128, 128, 128, 0.575) !important;
+  height: 40px !important;
+}
+input:focus, .ant-picker {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid gray !important;
+}
+label {
+  font-size: 16px !important;
+  color: black !important;
+}
+.ant-form-item {
+  margin: 10px 0 !important;
+}
+.primary-button {
+  background-color: #005555 !important;
+  border-color: #005555 !important;
+  height: 40px !important;
+  width: 100% !important;
+  color: white !important;
+  font-size: 16px !important;
+  width: max-content !important;
+}
+.full-width-button{
+  width: 100% !important;
+}
+.ant-picker-input input {
+  border: none !important;
+}
+.ant-picker {
+  border-radius: 2px;
+  border: 1px solid rgba(128, 128, 128, 0.575) !important;
+  height: 40px !important;
+}
+
+/* common style */
+.spinner-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.459);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+}
+.spinner-border {
+  width: 5rem;
+  height: 5rem;
+  color: white !important;
+}
+.page-title {
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.824);
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.662);
+}
+.normal-text {
+  font-size: 1rem;
+}
+
+.card {
+  box-shadow: 0 0 2px gray;
+  border-radius: 0;
+}
+.anchor {
+  color: black !important;
+  text-decoration: underline !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+}
+.anchor:hover {
+  text-decoration: underline !important;
+}
+
+/* authentication pages */
+.authentication {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #005555;
+}
+.authentication-form {
+  width: 400px;
+}
+
+.authentication .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: rgb(255, 102, 0);
+  color: white !important;
+  max-width: max-content !important;
+  padding: 7px 15px;
+  margin-left: -40px;
+  border-bottom-left-radius: 10px;
 }
