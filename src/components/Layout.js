@@ -3,6 +3,7 @@ import "../layout.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Badge } from "antd";
+// import img from "../image/logo.png"
 
 function Layout(props) {
   const [collapsed, setCollapsed] = useState(false);
@@ -17,7 +18,7 @@ function Layout(props) {
     },
     {
       name: "Appointment",
-      path: "/appointment",
+      path: "/appointments",
       icon: "ri-file-list-3-line",
     },
     {
@@ -31,7 +32,23 @@ function Layout(props) {
       icon: "ri-user-6-line",
     },
   ];
-
+  const departmentMenu = [
+    {
+      name: "Home",
+      path: "/",
+      icon: "ri-home-gear-line",
+    },
+    {
+      name: "Appointment",
+      path: "/appointments",
+      icon: "ri-file-list-3-line",
+    },
+    {
+      name: "Profile",
+      path: `/department/profile/${user?._id}`,
+      icon: "ri-user-6-line",
+    },
+  ];
   const adminMenu = [
     {
       name: "Home",
@@ -55,13 +72,22 @@ function Layout(props) {
     },
   ];
 
-  const menuToBeRendered = user?.isAdmin ? adminMenu : userMenu;
+  const menuToBeRendered = user?.isAdmin
+    ? adminMenu
+    : user?.isDepartment
+    ? departmentMenu
+    : userMenu;
+    const role = user?.isAdmin?"Admin" :user?.isDepartment?"Department" :"User";
   return (
+
     <div className="main">
       <div className="d-flex layout">
         <div className="sidebar">
           <div className="sidebar-header">
-            <h1 className="logo">PI</h1>
+            {/* <img src={img} />
+             */}
+             <h1 className="logo">PI</h1>
+            <h1 className="role">{role}</h1>
           </div>
           <div className="menu">
             {menuToBeRendered.map((menu) => {
@@ -118,6 +144,7 @@ function Layout(props) {
         </div>
       </div>
     </div>
+  
   );
 }
 

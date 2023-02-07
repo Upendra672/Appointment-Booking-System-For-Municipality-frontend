@@ -2,7 +2,11 @@
   color: white;
   font-weight: bold;
 }
-
+.role{
+  color: white;
+  font-size: 14px;
+  margin-top: -20px;
+}
 
 .main {
   padding: 20px;

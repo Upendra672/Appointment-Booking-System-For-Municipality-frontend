@@ -35,6 +35,14 @@ label {
 .full-width-button{
   width: 100% !important;
 }
+p{
+  color: rgba(0, 0, 0, 0.662) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
 .ant-picker-input input {
   border: none !important;
 }
