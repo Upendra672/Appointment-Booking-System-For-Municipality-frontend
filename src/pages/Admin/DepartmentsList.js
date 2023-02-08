@@ -52,12 +52,18 @@ function DepartmentsList() {
 
   useEffect(() => {
     getDepartmentsData();
+    // eslint-disable-next-line
   }, []);
 
   const columns = [
     {
       title: "Department Name",
       dataIndex: "departmentName",
+      render:(text, record)=>(
+        <span>
+          {record.departmentName} {record.phoneNumber}
+        </span>
+      )
     },
     {
       title: "Specilization",

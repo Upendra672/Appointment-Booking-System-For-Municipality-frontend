@@ -40,7 +40,7 @@ function Layout(props) {
     },
     {
       name: "Appointment",
-      path: "/appointments",
+      path: "/department/appointments",
       icon: "ri-file-list-3-line",
     },
     {
@@ -136,6 +136,7 @@ function Layout(props) {
                 <i className="ri-notification-2-line header-action-icon px-3"></i>
               </Badge>
               <Link className="anchor mx-2" to="/profile">
+              {/* <Link className="anchor mx-2" to='/department/profile/${user?._id}'> */}
                 {user?.name}
               </Link>
             </div>
