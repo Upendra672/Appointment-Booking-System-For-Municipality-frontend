@@ -1,6 +1,5 @@
 // incomplete for booking with valid details and 
-
-
+   
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
@@ -13,7 +12,7 @@ import { Button, Col, DatePicker, Row, TimePicker } from "antd";
 
 function BookAppointment() {
   const [isAvailable, setIsAvailable] = useState(false);
-  const [date, setDate] = useState();
+  const [date, setDate] = useState();  
   const [time, setTime] = useState();
   const { user } = useSelector((state) => state.user);
   const [department, setDepartment] = useState(null);
@@ -26,7 +25,7 @@ function BookAppointment() {
       const response = await axios.post(
         "/api/department/get-department-info-by-id",
         {
-          departmentId: params.departmentId,
+          departmentId: params.departmentId, 
         },
         {
           headers: {
@@ -114,7 +113,7 @@ function BookAppointment() {
   return (
     <Layout>
       {department && (
-        <div>
+        <div>     
           <h1 className="page-title">{department.departmentName}</h1>
           <hr />
           <Row>

@@ -24,14 +24,14 @@ function DepartmentAppointment()
           }
         } catch (error) {
           dispatch(hideLoading());
-        }
+        } 
       };     
       const changeAppointmentStatus = async(record, status) => {
         try {
           dispatch(showLoading());
           const response = await axios.post(
             "/api/department/change-appointment-status",
-            { appointmentId: record._id, userId: record.userId, status: status },
+            { appointmentId: record._id, userId: record.userId, status: status},
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -59,7 +59,7 @@ function DepartmentAppointment()
         },
         {
           title: "User",
-          dataIndex: "departmentName",
+          dataIndex: "name",
           render:(text, record)=>(
             <span>
               {record.userInfo.name} 
@@ -71,7 +71,7 @@ function DepartmentAppointment()
           dataIndex: "createdAt",
           render:(text, record)=>(
             <span>
-              {moment(record.date).format("DD:MM:YYYY")} {moment(record.time).format("HH:mm")}
+              {moment(record.date).format("DD-MM-YYYY")} {moment(record.time).format("HH:mm")}
             </span>
           )
         },

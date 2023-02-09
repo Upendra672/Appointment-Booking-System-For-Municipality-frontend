@@ -13,7 +13,7 @@ function Appointments()
     const getAppointmentsData = async() => {
         try {
           dispatch(showLoading());
-          const response = await axios.get("/api/user/get-appointments-by-user-id", {
+          const response = await axios.get("/api/user/get-appointment-by-user-id", {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -40,7 +40,16 @@ function Appointments()
           dataIndex: "departmentName",
           render:(text, record)=>(
             <span>
-              {record.departmentInfo.departmentName} {record.departmentInfo.phoneNumber}
+              {record.departmentInfo.departmentName}
+            </span>
+          )
+        },
+        {
+          title: "Phone Number",
+          dataIndex: "phoneNumber",
+          render:(text, record)=>(
+            <span>
+              {record.departmentInfo.phoneNumber}
             </span>
           )
         },
@@ -49,7 +58,7 @@ function Appointments()
           dataIndex: "createdAt",
           render:(text, record)=>(
             <span>
-              {moment(record.date).format("DD:MM:YYYY")} {moment(record.time).format("HH:mm")}
+              {moment(record.date).format("DD-MM-YYYY")} {moment(record.time).format("HH:mm")}
             </span>
           )
         },
