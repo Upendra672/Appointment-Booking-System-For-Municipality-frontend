@@ -5,6 +5,7 @@ import { toast } from "react-hot-toast";
 import Layout from "../../components/Layout";
 import React, { useEffect, useState } from "react";
 import { showLoading, hideLoading } from "../../redux/alertsSlice";
+import moment from "moment";
 
 function DepartmentsList() {
   const [departments, setDepartments] = useState([]);
@@ -76,6 +77,8 @@ function DepartmentsList() {
     {
       title: "Created At",
       dataIndex: "createdAt",
+      render: (record, text) => moment(record.createdAt).format("DD-MM-YYYY"),
+
     },
     {
       title: "Status",

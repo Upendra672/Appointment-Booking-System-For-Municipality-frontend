@@ -1,23 +1,24 @@
-// incomplete for booking with valid details and 
-   
+// incomplete for booking with valid details and
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import Layout from "../components/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { hideLoading, showLoading } from "../redux/alertsSlice";
-import {  useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import moment from "moment";
 import { Button, Col, DatePicker, Row, TimePicker } from "antd";
 
 function BookAppointment() {
   const [isAvailable, setIsAvailable] = useState(false);
-  const [date, setDate] = useState();  
+  const [date, setDate] = useState();
   const [time, setTime] = useState();
   const { user } = useSelector((state) => state.user);
   const [department, setDepartment] = useState(null);
   const params = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const getDepartmentData = async () => {
     try {
@@ -25,7 +26,7 @@ function BookAppointment() {
       const response = await axios.post(
         "/api/department/get-department-info-by-id",
         {
-          departmentId: params.departmentId, 
+          departmentId: params.departmentId,
         },
         {
           headers: {
@@ -65,11 +66,12 @@ function BookAppointment() {
       );
       dispatch(hideLoading());
       if (response.data.success) {
-        console.log(response.data.error)
+        navigate('/appointments')
+        console.log(response.data.error);
         toast.success(response.data.message);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
       toast.error("error booking appointment");
       dispatch(hideLoading());
     }
@@ -94,12 +96,11 @@ function BookAppointment() {
       if (response.data.success) {
         toast.success(response.data.message);
         setIsAvailable(true);
-      }
-      else{
-        toast.error(response.data.message)
+      } else {
+        toast.error(response.data.message);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
       toast.error("error booking appointment");
       dispatch(hideLoading());
     }
@@ -113,20 +114,38 @@ function BookAppointment() {
   return (
     <Layout>
       {department && (
-        <div>     
+        <div>
           <h1 className="page-title">{department.departmentName}</h1>
           <hr />
-          <Row>
+          <Row gutter={20} className="mt-5" align="middle">
+            <Col span={8} sm={24} xs={24} lg={8}>
+              <img
+                src="https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-book-now-in-banner-style-png-image_5683712.png"
+                alt="booknow img"
+                width="100%"
+                height="100%"
+              />
+            </Col>
             <Col span={8} sm={24} xs={24} lg={8}>
               <h1 className="normal-text">
                 <b>Timings: </b>
                 {department.timings[0]} - {department.timings[1]}
               </h1>
+              <p>
+                <b>Phone Number :</b> {department.phoneNumber}
+              </p>
+              <p>
+                <b>Address :</b> {department.address}
+              </p>
+              <p>
+                <b>Fess per document : </b>
+                {department.minFee}
+              </p>
 
-              <div className="d-flex flex-column pt-2">
+              <div className="d-flex flex-column pt-2 mt-2">
                 <DatePicker
                   format="DD-MM-YYYY"
-                  onChange={(value) =>{
+                  onChange={(value) => {
                     setDate(moment(value).format("DD-MM-YYYY"));
                     setIsAvailable(false);
                   }}
@@ -135,23 +154,29 @@ function BookAppointment() {
                   format="HH:mm"
                   className="mt-3"
                   onChange={(value) => {
-                    setIsAvailable(false);
                     setTime(moment(value).format("HH:mm"));
+                    setIsAvailable(false);
                   }}
                 />
-                <Button className="primary-button mt-3 full-width-button" onClick={checkAvailability}>
+                {!isAvailable && <Button
+                  className="primary-button mt-3 full-width-button"
+                  onClick={checkAvailability}
+                >
                   Check Availability
-                </Button>
-               {isAvailable && (
-                 <Button
-                 className="primary-button mt-3 full-width-button"
-                 onClick={bookNow}
-               >
-                 Book Now
-               </Button>
-               )}
+                </Button>}
+                {isAvailable && (
+                  <Button
+                    className="primary-button mt-3 full-width-button"
+                    onClick={bookNow}
+                  >
+                    Book Now
+                  </Button>
+                )}
               </div>
             </Col>
+            {/* <Col span={8} sm={24} xs={24} lg={8}>
+              <img src="https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-book-now-in-banner-style-png-image_5683712.png" alt="booknow img" />
+            </Col> */}
           </Row>
         </div>
       )}

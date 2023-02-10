@@ -26,11 +26,11 @@ function Layout(props) {
       path: "/apply-department",
       icon: "ri-government-line",
     },
-    {
-      name: "Profile",
-      path: "/profile",
-      icon: "ri-user-6-line",
-    },
+    // {
+    //   name: "Profile",
+    //   path: "/profile",
+    //   icon: "ri-user-6-line",
+    // },
   ];
   const departmentMenu = [
     {
