@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { hideLoading, showLoading,  } from "../redux/alertsSlice";
-
+import image from "../img/72342-welcome.gif"
 
 function Login() {
   const dispatch = useDispatch();
@@ -30,12 +30,17 @@ function Login() {
 
   return (
     <div className="authentication">
+
       <div className="authentication-form card p-3">
         <h1 className="card-title">Welcome Back</h1>
         <Form layout="vertical" onFinish={onFinish}>
+        <div className="gif">
+          <img src={image} />
+        </div>
           <Form.Item label="Email" name="email">
             <Input placeholder="Email" />
           </Form.Item>
+          
           <Form.Item label="Paasword" name="password">
             <Input placeholder="Password " type="password" />
           </Form.Item>

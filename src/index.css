@@ -1,123 +1,201 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-* {
-  font-family: "Montserrat", sans-serif !important;
+*{
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 /* antd override */
-
-input {
-  border-radius: 2px;
-  border: 1px solid rgba(128, 128, 128, 0.575) !important;
+input{
+  border-radius: 2px !important;
+  border: 1px solid rgba(128, 128, 128, 0.521) !important;
   height: 40px !important;
 }
-input:focus, .ant-picker {
+input:focus , .ant-picker{
   outline: none !important;
   box-shadow: none !important;
   border: 1px solid gray !important;
 }
-label {
+label{
   font-size: 16px !important;
   color: black !important;
 }
-.ant-form-item {
-  margin: 10px 0 !important;
+.ant-form-item{
+  margin: 10px 0 !important;; 
 }
-.primary-button {
-  background-color: #005555 !important;
-  border-color: #005555 !important;
+.ant-picker-input input{
+  border: none !important;
+}
+.ant-picker{
+  border-radius: 2px !important;
+  border: 1px solid rgba(128, 128, 128, 0.521) !important;
+  height: 40px !important;
+}
+/* Common styling */
+
+.spinner-parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.704);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+.spinner-border{
+  width: 5rem;
+  height: 5rem;
+  color: white !important;
+}
+
+.page-title{
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.833);
+  font-weight: bold;
+}
+.card-title{
+  font-size: 22px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.627);
+  border-radius: 16px 0px !important;
+  box-shadow: 2px 3px 2px rgb(70, 66, 66) ;
+
+}
+.normal-text{
+  font-size: 1rem;
+}
+.card{
+  margin: 16px;
+  box-shadow: 2px 3px 4px rgb(70, 66, 66);
+  border-radius: 0 !important;
+}
+.primary-button{
+  background-color:  #0617a1 !important;
+  /* border-color: #000000 !important; */
   height: 40px !important;
   width: 100% !important;
-  color: white !important;
+  color: #e9e7ff !important;
   font-size: 16px !important;
   width: max-content !important;
+  border-radius: 50px;
+  border: 1px solid #0617a1 !important; 
+}
+.primary-button:hover{
+  border: 1px solid #5431e6;
+  color :#ffffff !important;
+  border-radius: 50px;
+  box-shadow: 2px 3px 4px rgb(70, 66, 66);
 }
 .full-width-button{
   width: 100% !important;
 }
 p{
-  color: rgba(0, 0, 0, 0.662) !important;
-  margin: 0 !important;
+  color: rgba(0, 0, 0, 0.673) !important;
   padding: 0 !important;
+  margin: 0 !important;
 }
+
+.anchor{
+  color: black !important;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px !important;
+}
+.anchor:hover{
+  text-decoration: underline !important;
+}
+
 .cursor-pointer{
   cursor: pointer;
 }
-.ant-picker-input input {
-  border: none !important;
-}
-.ant-picker {
-  border-radius: 2px;
-  border: 1px solid rgba(128, 128, 128, 0.575) !important;
-  height: 40px !important;
-}
 
-/* common style */
-.spinner-parent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.459);
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 9999;
-}
-.spinner-border {
-  width: 5rem;
-  height: 5rem;
-  color: white !important;
-}
-.page-title {
-  font-size: 25px;
-  color: rgba(0, 0, 0, 0.824);
-  font-weight: bold;
-}
-
-.card-title {
-  font-size: 22px;
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.662);
-}
-.normal-text {
-  font-size: 1rem;
-}
-
-.card {
-  box-shadow: 0 0 2px gray;
-  border-radius: 0;
-}
-.anchor {
-  color: black !important;
-  text-decoration: underline !important;
-  font-size: 16px !important;
-  cursor: pointer !important;
-}
-.anchor:hover {
-  text-decoration: underline !important;
-}
 
 /* authentication pages */
-.authentication {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #005555;
-}
-.authentication-form {
+
+.authentication{
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #f5f8f9 ;
+   /* background: rgb(238,174,202);
+   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
+   /* background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
+   /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
+   background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+
+   }
+.authentication-form{
+  border-radius: 24px !important;
+  padding: 48px;
   width: 400px;
+  background: linear-gradient(135deg, 
+  rgba(255,255,255,0.1),
+  rgba(255,255,255,0.1));
+  backdrop-filter: blur(21px);
+  -webkit-backdrop-filter: blur(21px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+  border: 1px solid rgba(255,255,255,0.16);
 }
 
-.authentication .card-title {
+.authentication .card-title{
   font-size: 1.5rem;
   font-weight: bold;
-  background-color: rgb(255, 102, 0);
-  color: white !important;
+  background-color: #0617a1 ;
+  color: rgb(255, 255, 255) !important;
   max-width: max-content !important;
   padding: 7px 15px;
   margin-left: -40px;
   border-bottom-left-radius: 10px;
+}
+input{
+  border-radius: 10px !important;
+  background-color: rgba(148,187, 233, 0.1) !important;
+}
+input:hover{
+  border: 2px solid #6564bf !important;
+  transition: cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s !important;
+}
+.anchor:hover{
+  /* font-size: larger !important; */
+  text-decoration:underline !important;
+  
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(82, 72, 72) !important;
+  opacity: 1 !important; /* Firefox */
+}
+
+.gif img {
+  width: 13rem;
+  height: 13rem;
+  position: absolute;
+  top: -167px;
+  right: 6px;
+}
+.gif1 img {
+  width: 13rem;
+  height: 13rem;
+  position: absolute;
+  top: -167px;
+  right: 6px;
+}
+.my-card-style{
+  margin: 16px !important; 
+    /* box-shadow: 2px 3px 4px rgb(70 66 66); */
+    border-radius: 31px !important;
+    background: #fef4ff !important;
+    box-shadow: 9px 9px 27px #c1a8cc, -9px -9px 27px #ffffff !important;
+    border: none !important;
+    border-radius: 16px !important;
+    height: 14rem !important;
+}
+.card-title-7{
+  font-size: 22px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.627);
+    border-radius: 16px 0px !important;
+    /* box-shadow: 2px 3px 2px rgb(70 66 66);*/
 }

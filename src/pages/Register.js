@@ -5,7 +5,7 @@ import axios from "axios";
 import {toast} from "react-hot-toast";
 import { useDispatch} from "react-redux";
 import { hideLoading, showLoading,  } from "../redux/alertsSlice";
-
+import image from "../img/72342-welcome.gif";
 function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -31,6 +31,9 @@ function Register() {
       <div className="authentication-form card p-3">
         <h1 className="card-title">Nice To Meet You</h1>
         <Form layout="vertical" onFinish={onFinish}>
+        <div className="gif1">
+          <img src={image} />
+        </div>
           <Form.Item label="Name" name="name">
             <Input placeholder="Name" />
           </Form.Item>
