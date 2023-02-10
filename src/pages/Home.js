@@ -81,6 +81,9 @@ function Home() {
             {/* <!-- manual navigation end --> */}
         </div>
     </div>
+    <hr />
+    <h2 className="my-head">SERVICES</h2>
+    <hr />
       <Row gutter={20}>
         {departments.map((department) => (
           <Col span={8} xs={24} sm={24} lg={8}>

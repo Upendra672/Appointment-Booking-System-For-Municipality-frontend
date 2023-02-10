@@ -182,15 +182,16 @@ input:hover{
   top: -167px;
   right: 6px;
 }
-.my-card-style{
-  margin: 16px !important; 
-    /* box-shadow: 2px 3px 4px rgb(70 66 66); */
-    border-radius: 31px !important;
-    background: #fef4ff !important;
-    box-shadow: 9px 9px 27px #c1a8cc, -9px -9px 27px #ffffff !important;
-    border: none !important;
-    border-radius: 16px !important;
-    height: 14rem !important;
+
+.my-card-style {
+  margin: 16px !important;
+  /* box-shadow: 2px 3px 4px rgb(70 66 66); */
+  border-radius: 31px !important;
+  background: #fef4ff !important;
+  box-shadow: 5px 9px 17px -8px #c1a8cc, -5px -9px 17px -8px #ffffff !important;
+  border: none !important;
+  border-radius: 16px !important;
+  height: 14rem !important;
 }
 .card-title-7{
   font-size: 22px;
@@ -198,4 +199,7 @@ input:hover{
     color: rgba(0, 0, 0, 0.627);
     border-radius: 16px 0px !important;
     /* box-shadow: 2px 3px 2px rgb(70 66 66);*/
+}
+.border-10{
+  border-radius: 10px !important;
 }
