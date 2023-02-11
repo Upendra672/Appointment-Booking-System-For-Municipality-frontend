@@ -8,9 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { hideLoading, showLoading } from "../redux/alertsSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import moment from "moment";
-import { Button, Col, DatePicker, Row, TimePicker } from "antd";
-
-function BookAppointment() {
+import { Button, Col, Modal, DatePicker, Row, TimePicker } from "antd";
+import AppointmentSlip from "../components/AppointmentSlip";
+function BookAppointment(props) {
   const [isAvailable, setIsAvailable] = useState(false);
   const [date, setDate] = useState();
   const [time, setTime] = useState();
@@ -19,6 +19,19 @@ function BookAppointment() {
   const params = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [appointment, setAppointment] = useState(null);
+  const [visible,setVisible] = useState(false);
+
+  function disabledHours() {
+    const nonWorkingHours = [];
+    for (let i = 0; i < 10; i++) {
+      nonWorkingHours.push(i);
+    }
+    for (let i = 17; i < 24; i++) {
+      nonWorkingHours.push(i);
+    }
+    return nonWorkingHours;
+  }
 
   const disabledDate = current => {
     return (
@@ -72,10 +85,12 @@ function BookAppointment() {
         }
       );
       dispatch(hideLoading());
-      if (response.data.success) {
+      if (response.data.success  ) {
         navigate('/appointments')
         console.log(response.data.error);
         toast.success(response.data.message);
+        setAppointment(response.data.data);
+        setVisible(true)
       }
     } catch (error) {
       console.log(error);
@@ -161,6 +176,9 @@ function BookAppointment() {
                 <TimePicker
                   format="HH:mm"
                   className="mt-3"
+                  minuteStep={15}
+                  disabledHours={disabledHours}
+                  defaultValue={moment("10", "HH:mm")}
                   onChange={(value) => {
                     setTime(moment(value).format("HH:mm"));
                     setIsAvailable(false);
@@ -186,6 +204,14 @@ function BookAppointment() {
               <img src="https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-book-now-in-banner-style-png-image_5683712.png" alt="booknow img" />
             </Col> */}
           </Row>
+          <Modal
+        title="Appointment Slip"
+        visible={visible}
+        footer={null}
+        onCancel={() => setVisible(false)}
+      >
+        {appointment ? <AppointmentSlip appointment={appointment} /> : null}
+      </Modal>
         </div>
       )}
     </Layout>

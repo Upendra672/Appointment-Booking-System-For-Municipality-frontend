@@ -54,9 +54,14 @@ function DepartmentForm({ onFinish, initialValues }) {
         </Col>
         <Col span={8} xs={24} sm={24} lg={8}>
           <Form.Item label="Timings" name="timings">
-            <TimePicker.RangePicker format="hh:mm" />
+            <TimePicker.RangePicker format="HH:mm" />
           </Form.Item>
         </Col>
+        <Col span={8} xs={24} sm={24} lg={8}>
+          <Form.Item label="Slots" name="slots"> 
+            <Input placeholder="Number Of Slots" type="number" />
+          </Form.Item>
+          </Col>
       </Row>
       <div className="d-flex justify-content-end">
         <Button className="primary-button" htmlType="submit">

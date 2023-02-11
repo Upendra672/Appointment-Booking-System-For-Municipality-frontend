@@ -85,7 +85,7 @@ function DepartmentAppointment()
                     <div className="d-flex">
                 <h1
                     className="anchor px-2"
-                    onClick={() => changeAppointmentStatus(record, 'approved')}
+                    onClick={() => changeAppointmentStatus(record, 'cancelled')}
                   >
                     Reschedule
                   </h1>

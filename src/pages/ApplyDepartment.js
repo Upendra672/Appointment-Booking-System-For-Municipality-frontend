@@ -47,7 +47,7 @@ function ApplyDepartment() {
 
   return (
     <Layout>
-      <h1 className="page-title">Apply For Department</h1>
+      <h1 className="page-title">Create Department</h1>
       <hr />
       <DepartmentForm onFinish={onFinish} />
     </Layout>
