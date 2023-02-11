@@ -75,10 +75,7 @@ function DepartmentAppointment()
             </span>
           )
         },
-        {
-          title: "Status",
-          dataIndex: "status",
-        },
+       
         {
             title: "Actions",
             dataIndex: "actions",
@@ -90,13 +87,13 @@ function DepartmentAppointment()
                     className="anchor px-2"
                     onClick={() => changeAppointmentStatus(record, 'approved')}
                   >
-                    Approve
+                    Reschedule
                   </h1>
                   <h1
                     className="anchor"
                     onClick={() => changeAppointmentStatus(record, 'rejected')}
                   >
-                    Reject
+                    Cancel
                   </h1>
                   </div>
                 )}

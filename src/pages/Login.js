@@ -37,7 +37,14 @@ function Login() {
         <div className="gif">
           <img src={image} />
         </div>
-          <Form.Item label="Email" name="email">
+          <Form.Item label="Email" name="email" rules={[{
+            type:"email",
+            message: "The input is not vailid E-mail!",
+          },{
+            required: true,
+            message:"Please input your Email!",
+          }
+          ]}>
             <Input placeholder="Email" />
           </Form.Item>
           

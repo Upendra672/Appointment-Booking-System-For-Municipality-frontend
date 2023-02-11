@@ -54,7 +54,7 @@ function DepartmentForm({ onFinish, initialValues }) {
         </Col>
         <Col span={8} xs={24} sm={24} lg={8}>
           <Form.Item label="Timings" name="timings">
-            <TimePicker.RangePicker format="HH:mm" />
+            <TimePicker.RangePicker format="hh:mm" />
           </Form.Item>
         </Col>
       </Row>

@@ -28,7 +28,7 @@ function App() {
         )}
         <Toaster position="top-center" reverseOrder={false}/>
         <Routes>
-          <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+          f <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
           <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
           <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}/>
           <Route path="/apply-department" element={<ProtectedRoute><ApplyDepartment/></ProtectedRoute>}/>

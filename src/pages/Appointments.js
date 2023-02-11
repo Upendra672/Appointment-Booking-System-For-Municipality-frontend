@@ -25,7 +25,8 @@ function Appointments()
         } catch (error) {
           dispatch(hideLoading());
         }
-      };     
+      };
+    const onClick = async()=>{}     
       useEffect(() => {
         getAppointmentsData();
         // eslint-disable-next-line
@@ -58,7 +59,7 @@ function Appointments()
           dataIndex: "createdAt",
           render:(text, record)=>(
             <span>
-              {moment(record.date).format("DD-MM-YYYY")} {moment(record.time).format("HH:mm")}
+              {moment(record.date).format("DD-MM-YYYY")} {moment(record.time).format("hh:mm")}
             </span>
           )
         },
@@ -71,6 +72,7 @@ function Appointments()
 <Layout>
       <h1 className="page-header">Appointment Lists</h1>
       <Table columns={columns} dataSource={appointments}></Table>
+      {/* <button onClick={onClick}>Cancel</button> */}
     </Layout>
     )
 }

@@ -12,14 +12,14 @@ import mainc1 from "../img/MAAIN C1.png"
 function Home() {
   const [departments, setDepartments] = useState([]);
   const dispatch = useDispatch();
-  var counter=1;
-  setInterval(function () {
-      document.getElementById('radio' + counter).checked = true;
-      counter++;
-      if(counter>3){
-          counter=1;
-      }
-  },5000);
+  // var counter=1;
+  // setInterval(function () {
+  //     document.getElementById('radio' + counter).checked = true;
+  //     counter++;
+  //     if(counter>3){
+  //         counter=1;
+  //     }
+  // },5000);
 
   const getData = async () => {
     try {

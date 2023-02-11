@@ -65,11 +65,11 @@ function Layout(props) {
       path: "/admin/departmentlist",
       icon: "ri-government-line",
     },
-    {
-      name: "Profile",
-      path: "/profile",
-      icon: "ri-user-6-line",
-    },
+    // {
+    //   name: "Profile",
+    //   path: "/profile",
+    //   icon: "ri-user-6-line",
+    // },
   ];
 
   const menuToBeRendered = user?.isAdmin
