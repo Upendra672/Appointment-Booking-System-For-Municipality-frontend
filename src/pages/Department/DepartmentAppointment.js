@@ -71,7 +71,7 @@ function DepartmentAppointment()
           dataIndex: "createdAt",
           render:(text, record)=>(
             <span>
-              {moment(record.date).format("DD-MM-YYYY")} {moment(record.time).format("HH:mm")}
+              {moment(record.date).format("DD-MM-YYYY")} {" "} {moment(record.time).format("HH:mm")}
             </span>
           )
         },

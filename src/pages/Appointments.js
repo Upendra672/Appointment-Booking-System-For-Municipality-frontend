@@ -63,10 +63,10 @@ function Appointments()
             </span>
           )
         },
-        {
-          title: "Status",
-          dataIndex: "status",
-        }
+        // {
+        //   title: "Status",
+        //   dataIndex: "status",
+        // }
       ];
     return(
 <Layout>

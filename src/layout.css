@@ -11,6 +11,7 @@
 .main {
   padding: 20px;
   height: 100%;
+
 }
 
 .sidebar {
@@ -41,10 +42,11 @@
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 2px gray;
-  height: 130vh;
+  height: 150vh;
   width: 100%;
 }
 .menu{
+  position: sticky;
     margin-top: 100px;
     padding: 0 5px;
 }

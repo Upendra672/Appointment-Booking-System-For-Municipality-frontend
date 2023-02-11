@@ -20,6 +20,13 @@ function BookAppointment() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const disabledDate = current => {
+    return (
+      current &&
+      (current < moment().startOf('day') || current.day() === 0)
+    );
+  };
+
   const getDepartmentData = async () => {
     try {
       dispatch(showLoading());
@@ -144,6 +151,7 @@ function BookAppointment() {
 
               <div className="d-flex flex-column pt-2 mt-2">
                 <DatePicker
+                disabledDate={disabledDate}
                   format="DD-MM-YYYY"
                   onChange={(value) => {
                     setDate(moment(value).format("DD-MM-YYYY"));
